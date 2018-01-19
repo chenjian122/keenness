@@ -1,0 +1,30 @@
+spring:
+    application:
+        name: keenness-auth
+    redis:
+        database: 1
+        host: 192.168.36.131
+        port: 6379
+        pool:
+            max-active: 20
+
+server:
+    port: 8082
+
+eureka:
+    instance:
+        statusPageUrlPath: /info
+        healthCheckUrlPath: /health
+        prefer-ip-address: true
+        ip-address: 127.0.0.1
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8761/eureka/
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000

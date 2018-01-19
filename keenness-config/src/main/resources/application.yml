@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: keenness-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/chenjian122/config-server.git
+          force-pull: true
+
+server:
+    port: 8081 #启动端口
+
+eureka:
+    instance:
+        statusPageUrlPath: /info
+        healthCheckUrlPath: /health
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8761/eureka/

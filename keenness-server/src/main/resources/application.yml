@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: keenness-server
+
+server:
+  port: 8761 #启动端口
+
+eureka:
+  client:
+    register-with-eureka: false   #不作为一个客户端注册到注册中心
+    fetch-registry: false
+  instance:
+    hostname: localhost

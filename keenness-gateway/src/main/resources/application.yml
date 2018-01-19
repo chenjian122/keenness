@@ -1,0 +1,39 @@
+spring:
+    application:
+        name: keenness-gateway
+    redis:
+        database: 1
+        host: 192.168.36.131
+        pool:
+            max-active: 20
+server:
+    port: 80 #启动端口
+
+zuul:
+  prefix: /api
+  routes:
+    back:
+      path: /admin/**
+      serviceId: keenness-admin
+
+    auth:
+      path: /auth/**
+      serviceId: keenness-auth
+
+#如果Zuul使用服务发现,通过Ribbon配置超时时间
+ribbon:
+  eureka:
+    enabled: true
+  ReadTimeout: 120000
+  ConnectTimeout: 120000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  OkToRetryOnAllOperations: false
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000    #熔断超时配置
