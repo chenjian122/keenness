@@ -28,6 +28,6 @@ public class AuthController {
     public ResponseEntity<?> createAuthToken(HttpServletRequest request, HttpServletResponse response) throws Exception{
         String token = authService.login("","");
         CookieUtil.createCookie(response,"JWT-TOKEN",token,false,-1);
-        return ResponseEntity.ok("认证成功");
+        return ResponseEntity.ok(token);
     }
 }
