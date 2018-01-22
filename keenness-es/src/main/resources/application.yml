@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: keenness-es
+
+server:
+  port: 8084 #启动端口
+
+
