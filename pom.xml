@@ -9,15 +9,13 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>keeness-base</module>
-        <module>keenness-util</module>
-        <module>keenness-privilege</module>
         <module>keenness-server</module>
         <module>keenness-config</module>
         <module>keenness-gateway</module>
         <module>keenness-auth</module>
         <module>keenness-common</module>
         <module>keenness-admin</module>
+        <module>keenness-es</module>
     </modules>
 
     <parent>
